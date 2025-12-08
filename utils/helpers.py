@@ -16,6 +16,7 @@ def imprimir_error(texto):
 def imprimir_exito(texto):
     print(f"{Fore.GREEN}✅ {texto}{Style.RESET_ALL}")
 
+# Validaciones para main
 def validar_input_string(prompt): 
     while True:
         dato = input(f"{Fore.BLUE}{prompt}: {Style.RESET_ALL}").strip() #ingresa el nombre del producto
@@ -42,4 +43,5 @@ def validar_input_int(prompt):
             imprimir_error("El número debe ser positivo")
         except ValueError:
             imprimir_error("El campo no tiene que ser un número válido.")
+
 
