@@ -1,3 +1,4 @@
+# Relación al inventario
 import sqlite3
 from utils.helpers import imprimir_error
 from config import BD_NAME, TABLE_NAME
@@ -5,6 +6,7 @@ from config import BD_NAME, TABLE_NAME
 def conectar_db():
     return sqlite3.connect(BD_NAME)
 
+# Creación de tabla
 def inicializar_db():
     try:
        with conectar_db() as conn:
@@ -23,7 +25,8 @@ def inicializar_db():
            conn.commit()
     except sqlite3.Error as e:
         imprimir_error(f"Error al iniciar la base de datos. {e}")
-        
+
+# Comandos para agregar, buscar, eliminar, actualizar, stock
 def crear_producto(nombre, descripcion, cantidad, precio, categoria):
     try:
         with conectar_db() as conn:
@@ -102,4 +105,5 @@ def informe_baja_stock(limite):
     except sqlite3.Error as e:
         imprimir_error(f"Error en el reporte. {e}")
         return []
+
     
