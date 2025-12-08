@@ -13,6 +13,7 @@ def mostrar_tabla(productos):
          print(f"{prod[0]:<5} {prod[1][:18]:<20} {prod[5][:13]:<15} ${prod[4]:<9.2f} {prod[3]:<10} {prod[2]:<15}")
     print("-" * 65)
 
+# Creación del menu para registro
 def menu_registrar():
     imprimir_titulo("Registrar nuevo producto")
     nombre = validar_input_string("Ingrese el nombre del producto: ")
@@ -141,4 +142,5 @@ def main():
             
 if __name__ == "__main__":
     main()
+
     
